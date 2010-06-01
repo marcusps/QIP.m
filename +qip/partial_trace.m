@@ -2,7 +2,7 @@ function x = partial_trace(p,sys,dim);
 
 % PARTIAL_TRACE   Partial trace
 % requires: nothing
-% author: Toby Cubitt ( http://www.dr-qubit.org )
+% author: Toby Cubitt
 %
 %    X = PARTIAL_TRAC(RHO,SYS,DIM) traces out system SYS of a matrix RHO
 %    with subsystem dimensions specified by DIM.
@@ -19,10 +19,28 @@ function x = partial_trace(p,sys,dim);
 %    DIM=[dim1,dim2,dim3] specifies a dim1 x dim2 x dim3 system
 %    (duh!)
 %
+%    Copyright (C) 2010   Toby Cubitt   <toby@dr-qubit.org>
+%
 %    License: Distributed under GPL 2.0
 %             http://creativecommons.org/licenses/GPL/2.0/
 %             http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 %
+
+%  Copyright (C) 2010   Toby Cubitt   <toby@dr-qubit.org>
+% 
+%  This program is free software; you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation; either version 3 of the License, or
+%  (at your option) any later version.
+% 
+%  This program is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+% 
+%  You should have received a copy of the GNU General Public License
+%  along with this program; if not, see <http://www.gnu.org/licenses/>.
+
 
 switch length(dim)
  case 0

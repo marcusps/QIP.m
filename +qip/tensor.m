@@ -1,7 +1,7 @@
 function M = tensor(varargin)
 
 % TENSOR  Tensor product
-% author: Toby Cubitt ( http://www.dr-qubit.org )
+% author: Toby Cubitt
 % requires: none
 %
 %   m = TENSOR(a,b,c,...) returns the kronecker product of its arguments.
@@ -13,10 +13,28 @@ function M = tensor(varargin)
 % 
 %   See also: kron
 %
+%   Copyright (C) 2010  Toby Cubitt   <toby@dr-qubit.org>
+% 
 %   License: Distributed under GPL 2.0
 %            http://creativecommons.org/licenses/GPL/2.0/
 %            http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 %
+
+%  Copyright (C) 2010   Toby Cubitt   <toby@dr-qubit.org>
+% 
+%  This program is free software; you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation; either version 3 of the License, or
+%  (at your option) any later version.
+% 
+%  This program is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+% 
+%  You should have received a copy of the GNU General Public License
+%  along with this program; if not, see <http://www.gnu.org/licenses/>.
+
 
 M = 1;
 for j = 1:nargin
