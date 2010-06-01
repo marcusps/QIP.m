@@ -13,6 +13,8 @@ functions are:
   - open_systems
     * liou
     * liou_row
+    * kraus
+    * dissipator
     * vecinv
     * rowinv
     * elimination
