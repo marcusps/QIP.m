@@ -10,6 +10,7 @@ functions are:
 + qip
   - tensor
   - partial_trace
+  - asym_hermitian_matrix
   - open_systems
     * liou
     * liou_row
@@ -25,10 +26,10 @@ functions are:
     * real2complex_mat
     * real2complex_vec
   - random
-    * unitary.m
-    * orthogonal_matrix.m
-    * pure_state.m
-    * mixed_state.m
-    * real_mixed_state.m
-    * dynamical_matrix.m
-    * choi_matrix.m
+    * unitary
+    * orthogonal_matrix
+    * pure_state
+    * mixed_state
+    * real_mixed_state
+    * dynamical_matrix
+    * choi_matrix
