@@ -10,14 +10,14 @@ function r = asym_hermitian_matrix( m )
 %   the upper triangular part of M, and the lower triangular part
 %   of A is the imaginary part of the upper triangular part of M.
 %
-%   Copyright (C) 2010   Marcus P da Silva   <marcus.ps+github@gmail.com>
+%   Copyright (C) 2010   Marcus P da Silva http://github.com/marcusps
 % 
 %   License: Distributed under GPL 2.0
 %            http://creativecommons.org/licenses/GPL/2.0/
 %            http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 %
 
-%  Copyright (C) 2010   Marcus P da Silva   <marcus.ps+github@gmail.com>
+%  Copyright (C) 2010   Marcus P da Silva http://github.com/marcusps
 % 
 %  This program is free software; you can redistribute it and/or modify
 %  it under the terms of the GNU General Public License as published by
