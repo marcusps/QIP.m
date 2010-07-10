@@ -1,5 +1,4 @@
 function rho = mixed_state(d)
-
 % QIP.RANDOM.MIXED_STATE  Random density matrix
 % author: Marcus da Silva
 % requires: qip.random.unitary
@@ -8,9 +7,10 @@ function rho = mixed_state(d)
 %   D with unity trace.
 %
 %   The matrix is generated as follows: the eigenvalues are
-%   randomly chosen from a uniform distribution on [0,1], and the
+%   randomly chosen from a uniform distribution on the probability
+%   simplex (known as the DIrichlet distribution), and the
 %   diagonalization transformation is chosen from the Haar
-%   distribution of unitaries. The trace is then normalized to be 1.
+%   distribution of unitaries.
 % 
 %   See also: qip.random.unitary
 %
@@ -37,6 +37,5 @@ function rho = mixed_state(d)
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 u = qip.random.unitary(d);
-e = rand(1,d);
-e = e/sum(e);
+e = dirichlet(ones(1,d),1);
 rho = u*diag(e)*u';

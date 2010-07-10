@@ -1,12 +1,12 @@
-function rho = real_mixed_state(d)
-
-% QIP.RANDOM.REAL_MIXED_STATE  Random real-valued mixed state
+function sample = dirichlet( alpha )
+% QIP.RANDOM.MIXED_STATE  Sample a vector from Dir(alpha(1), ..., alpha(k))
 % author: Marcus da Silva
-% requires: none
+% requires: nothing
 %
-%   M = qip.random.real_mixed_state(D) returns a D by D real-valued
-%   density matrix.
-%
+%   M = qip.random.dirichlet(D) returns a vector sampled from the
+%   probability simplex according to the Diriclet distribution with
+%   parameters alpha.
+% 
 %   See also: qip.random.mixed_state
 %
 %   Copyright (C) 2010   Marcus P da Silva http://github.com/marcusps
@@ -31,6 +31,10 @@ function rho = real_mixed_state(d)
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-u = qip.random.rand_ortho(d);
-e = dirichlet(ones(1,d));
-rho = u*diag(e)*u';
+k = length(alpha);
+sample = zeros(1, k);
+for i=1:k
+  sample(i) = gamrnd(alpha(i), 1, 1, 1);
+end
+S = sum(sample);
+sample = sample ./ S;
