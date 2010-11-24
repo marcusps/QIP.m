@@ -1,7 +1,7 @@
 function l = kraus( a ) 
 
 % QIP.OPEN_SYSTEMS.KRAUS  Liouvillian representation of Kraus operators
-% requires: nothing
+% requires: qip.open_systems.liou
 % author: Marcus da Silva
 %
 %    L = qip.open_systems.kraus(A) returns a column-major
@@ -34,10 +34,10 @@ function l = kraus( a )
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 if iscell(a),
-  l = liou(zeros(size(a{1})),zeros(size(a{1})));
+  l = qip.open_systems.liou(zeros(size(a{1})),zeros(size(a{1})));
   for k = 1:length(a),
-    l = l + liou(a{k},a{k}');
+    l = l + qip.open_systems.liou(a{k},a{k}');
   end
 else
-  l = liou(a,a');
+  l = qip.open_systems.liou(a,a');
 end

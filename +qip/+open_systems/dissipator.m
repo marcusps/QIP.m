@@ -1,7 +1,7 @@
 function l = dissipator( a ) 
 
 % QIP.OPEN_SYSTEMS.DISSIPATOR  Liouvillian representation of dissipator superoperator
-% requires: nothing
+% requires: qip.open_systems.liou
 % author: Marcus da Silva
 %
 %    L = qip.open_systems.dissipator(A) returns a column-major
@@ -36,7 +36,7 @@ function l = dissipator( a )
 diss = @(b) liou(b,b')-.5*liou(b'*b,eye(size(b)))-.5*liou(eye(size(b)),b'*b);
 
 if iscell(a),
-  l = liou(zeros(size(a{1})),zeros(size(a{1})));
+  l = qip.open_systems.liou(zeros(size(a{1})),zeros(size(a{1})));
   for k = 1:length(a),
     l = l + diss(a{k});
   end

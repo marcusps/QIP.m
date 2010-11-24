@@ -1,7 +1,7 @@
 function L = hamiltonian( h )
 
 % QIP.OPEN_SYSTEMS.HAMILTONIAN  Liouvillian representation of hamiltonian superoperator
-% requires: nothing
+% requires: qip.open_systems.liou
 % author: Marcus da Silva
 %
 %    L = qip.open_systems.hamiltonian(A) returns a column-major
@@ -31,4 +31,4 @@ function L = hamiltonian( h )
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-L = -1j * liou(h,eye(size(h))) + 1j * liou(eye(size(h)),h);
+L = -1j * qip.open_systems.liou(h,eye(size(h))) + 1j * qip.open_systems.liou(eye(size(h)),h);

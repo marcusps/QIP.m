@@ -1,7 +1,7 @@
 function du = duplication_conj(n)
 
 % QIP.OPEN_SYSTEMS.DUPLICATION_CONJ   Generated a duplication and conjugation matrix.
-% requires: nothing
+% requires: qip.open_systems.complex2real_mat, qip.open_systems.duplication
 % author: Marcus da Silva
 %
 %    M = DUPLICATION_CONJ(D) Generates a duplication matrix acting on the result of 
@@ -44,4 +44,4 @@ for c=1:n,
   end
 end
 
-du = du*complex2real_mat(duplication(n));
+du = du*qip.open_systems.complex2real_mat(qip.open_systems.duplication(n));
