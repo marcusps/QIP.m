@@ -5,6 +5,10 @@ function c = ctrlu( u, n=1 )
 %
 %   CTRLU(u) returns a unitary corresponding to the controlled-u operation.
 %
+%   CTRLU(u,n) returns a unitary corresponding to the n-bit
+%   controlled-u operation (that is, u acting conditioned on the
+%   state of n qubits)
+%
 %   Copyright (C) 2010  Marcus P. da Silva  http://github.com/marcusps
 % 
 %   License: Distributed under GPL 2.0
