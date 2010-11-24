@@ -4,7 +4,7 @@ function x = partial_trace(p,sys,dim);
 % requires: nothing
 % author: Toby Cubitt
 %
-%    X = PARTIAL_TRAC(RHO,SYS,DIM) traces out system SYS of a matrix RHO
+%    X = PARTIAL_TRACE(RHO,SYS,DIM) traces out system SYS of a matrix RHO
 %    with subsystem dimensions specified by DIM.
 %
 %    If no dimensions are specified, i.e. DIM=[], PARTIAL_TRACE assumes a 2x2

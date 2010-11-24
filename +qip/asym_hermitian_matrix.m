@@ -2,7 +2,7 @@ function r = asym_hermitian_matrix( m )
 
 % QIP.ASYM_HERMITIAN_MATRIX  Tensor product
 % author: Marcus da Silva
-% requires: none
+% requires: nothing
 %
 %   A = qip.asym_hermitian_matrix( M ) returns a real-valued
 %   representation of a hermitian matrix where the diagonals remain
