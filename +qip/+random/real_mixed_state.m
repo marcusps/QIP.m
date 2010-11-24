@@ -32,5 +32,5 @@ function rho = real_mixed_state(d)
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 u = qip.random.rand_ortho(d);
-e = dirichlet(ones(1,d));
+e = qip.random.dirichlet(ones(1,d));
 rho = u*diag(e)*u';

@@ -22,4 +22,4 @@ function phis = dynamical_matrix(d)
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-phis = choi_shuffle(rand_choi_matrix(d));
+phis = qip.open_systems.choi_shuffle(qip.random.rand_choi_matrix(d));
