@@ -8,6 +8,12 @@ which contain related functions. The packages and
 functions are:
 
 + qip
+  - ket
+  - bra
+  - ketbra
+  - normalize
+  - projector
+  - ctrlu
   - tensor
   - partial_trace
   - asym_hermitian_matrix
