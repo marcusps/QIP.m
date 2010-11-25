@@ -1,4 +1,4 @@
-function c = ctrlu( u, n=1 )
+function c = ctrlu( u, n )
 % CTRLU
 % author: Marcus P. da Silva
 % requires: nothing
@@ -29,5 +29,9 @@ function c = ctrlu( u, n=1 )
 %  GNU General Public License for more details.
 % 
 %  You should have received a copy of the GNU General Public License
-%  along with this program; if not, see <http://www.gnu.org/licenses/>.
+%  along with this program; if not, see
+%  <http://www.gnu.org/licenses/>.
+if nargin < 2 || isempty(n)
+  n = 1;
+end
 c = sparse(blkdiag(eye(2^n),u));

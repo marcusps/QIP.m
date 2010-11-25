@@ -27,5 +27,5 @@ function v = ket( m )
 % 
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
-v = [zeros([1,2^length(m)-bin2dec(m)-1]),1,zeros([1, ...
-                    bin2dec(m)])](2^length(m):-1:1)';
+v = flipud([zeros([1,2^length(m)-bin2dec(m)-1]),1,zeros([1, ...
+                    bin2dec(m)])]');
