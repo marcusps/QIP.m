@@ -39,5 +39,5 @@ The packages and functions are:
     * pure_state
     * mixed_state
     * real_mixed_state
-    * dynamical_matrix
+    * superoperator
     * choi_matrix
