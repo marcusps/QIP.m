@@ -21,7 +21,8 @@ The packages and functions are:
   - open_systems
     * liou
     * liou_row
-    * kraus
+    * kraus2liou
+    * choi2liou
     * dissipator
     * vecinv
     * rowinv
