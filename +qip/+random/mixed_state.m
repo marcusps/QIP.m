@@ -37,5 +37,5 @@ function rho = mixed_state(d)
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
 u = qip.random.unitary(d);
-e = qip.random.dirichlet(ones(1,d),1);
+e = qip.random.dirichlet(ones(1,d));
 rho = u*diag(e)*u';
