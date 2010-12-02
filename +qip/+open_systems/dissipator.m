@@ -33,7 +33,7 @@ function l = dissipator( a )
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-diss = @(b) liou(b,b')-.5*liou(b'*b,eye(size(b)))-.5*liou(eye(size(b)),b'*b);
+diss = @(b) qip.open_systems.liou(b,b')-.5*qip.open_systems.liou(b'*b,eye(size(b)))-.5*qip.open_systems.liou(eye(size(b)),b'*b);
 
 if iscell(a),
   l = qip.open_systems.liou(zeros(size(a{1})),zeros(size(a{1})));
