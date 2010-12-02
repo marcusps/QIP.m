@@ -23,6 +23,7 @@ The packages and functions are:
     * liou_row
     * kraus2liou
     * choi2liou
+    * hamiltonian
     * dissipator
     * vecinv
     * rowinv
