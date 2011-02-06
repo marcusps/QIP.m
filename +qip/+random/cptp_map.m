@@ -33,11 +33,11 @@ function phis = cptp_map(varargin)
 d = varargin{1};
 if length(varargin)>1,
   e = varargin{2};
-  if e>d,
-    e = d;
+  if e>d^2,
+    e = d^2;
   end
 else
-  e = d;
+  e = d^2;
 end
 u=qip.random.unitary(d*e);
 ey=eye(d);
