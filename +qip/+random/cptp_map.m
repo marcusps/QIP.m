@@ -1,5 +1,5 @@
-function phis = superoperator(varargin)
-% QIP.RANDOM.SUPEROPERATOR  Random trance preserving CP map
+function phis = cptp_map(varargin)
+% QIP.RANDOM.CPTP_MAP  Random completely positive trace preserving map
 % requires: qip.ket, qip.bra, qip.random.unitary, kron
 % author: Marcus da Silva
 %
