@@ -31,7 +31,6 @@ function l = kraus2liou( a )
 % 
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
-
 if iscell(a),
   l = qip.open_systems.liou(zeros(size(a{1})),zeros(size(a{1})));
   for k = 1:length(a),
