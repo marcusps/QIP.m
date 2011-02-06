@@ -1,9 +1,11 @@
-function v = bra( s )
+function v = bra( s, d )
 % BRA
 % author: Marcus P. da Silva
 % requires: qip.ket
 %
 %   BRA(S) returns a basis row vector with binary representation S.
+%
+%   BRA(N, D) returns the Nth basis row vector in a D dimensional space.
 %
 %   Copyright (C) 2010  Marcus P. da Silva  http://github.com/marcusps
 % 
@@ -26,4 +28,4 @@ function v = bra( s )
 % 
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
-v = qip.ket( s )';
+v = qip.ket( s, d )';

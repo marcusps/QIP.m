@@ -1,4 +1,4 @@
-function m = ketbra( s1, s2 )
+function m = ketbra( s1, s2, d )
 % NORMALIZE
 % author: Marcus P. da Silva
 % requires: qip.ket, qip.bra
@@ -27,5 +27,11 @@ function m = ketbra( s1, s2 )
 %  GNU General Public License for more details.
 % 
 %  You should have received a copy of the GNU General Public License
-%  along with this program; if not, see <http://www.gnu.org/licenses/>.
-m = qip.ket(s1)*qip.bra(s2);
+%  along with this program; if not, see
+%  <http://www.gnu.org/licenses/>.
+m=[];
+if ischar(s1) & ischar(s2),
+  m = qip.ket(s1)*qip.bra(s2);
+elseif isnumeric(s1) & isnumeric(s2) & s1>=0 & s2>=0 & s1<d & s2<d,
+  m = qip.ket(s1,d)*qip.bra(s2,d);
+end

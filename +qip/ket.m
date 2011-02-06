@@ -1,10 +1,13 @@
-function v = ket( m )
+function v = ket( m, d )
 % KET
 % author: Marcus P. da Silva
 % requires: nothing
 %
-%   KET(v) returns the basis vector corresponding to the binary
+%   KET(V) returns the basis vector corresponding to the binary
 %   string v.
+%
+%   KET(N,D) returns the Nth basis vector corresponding in a
+%   Hilbert space of dimension D.
 %
 %   Copyright (C) 2010  Marcus P. da Silva  http://github.com/marcusps
 % 
@@ -26,6 +29,14 @@ function v = ket( m )
 %  GNU General Public License for more details.
 % 
 %  You should have received a copy of the GNU General Public License
-%  along with this program; if not, see <http://www.gnu.org/licenses/>.
-v = flipud([zeros([1,2^length(m)-bin2dec(m)-1]),1,zeros([1, ...
-                    bin2dec(m)])]');
+%  along with this program; if not, see
+%  <http://www.gnu.org/licenses/>.
+v = [];
+if ischar(m),
+  v = flipud([zeros([1,2^length(m)-bin2dec(m)-1]),1,zeros([1, ...
+                      bin2dec(m)])]');
+elseif isnumeric(m) & isnumeric(d) & m<d & m>=0,
+  rshift = @(v,n)  v([(length(v)-n+1):length(v),1:(length(v)-n)]);
+  ket_zero = @(d) [1;zeros(d-1,1)];
+  v = rshift(ket_zero(d),m);
+end
