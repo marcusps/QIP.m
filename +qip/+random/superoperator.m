@@ -1,18 +1,13 @@
-function phis = superoperator(d)
-% QIP.RANDOM.SUPEROPERATOR  Liouvillian representation of Kraus operators
-% requires: qip.open_systems.choi2liou, qip.random.choi_matrix
+function phis = superoperator(varargin)
+% QIP.RANDOM.SUPEROPERATOR  Random trance preserving CP map
+% requires: qip.ket, qip.bra, qip.random.unitary, kron
 % author: Marcus da Silva
 %
-%    L = qip.random.superoperator(d) returns the column-major
+%    L = qip.random.superoperator(d,e) returns the column-major
 %    liouville representation of a random superoperator acting on a d
-%    dimensional Hilbert space. The superoperator is chosen by
-%    generating a random Choi matrix, and then shuffling the matrix
-%    elements accordingly.
-%
-%    IMPORTANT: There is no guarantee that the generated superoperator
-%    is trace preserving.
-%
-%    See also: choi2liou, choi_matrix
+%    dimensional Hilbert space, with an E dimensional environment. 
+%    The superoperator is chosen by generating Haar distributed
+%    unitary acting on the joint system, and performing a partial trace.
 %
 %   Copyright (C) 2010   Marcus P da Silva http://github.com/marcusps
 % 
@@ -35,4 +30,19 @@ function phis = superoperator(d)
 % 
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
-phis = qip.open_systems.choi2liou(qip.random.choi_matrix(d));
+d = varargin{1};
+if length(varargin)>1,
+  e = varargin{2};
+  if e>d,
+    e = d;
+  end
+else
+  e = d;
+end
+u=qip.random.unitary(d*e);
+ey=eye(d);
+r=u*kron(ey,qip.ket(0,e));
+phis=zeros(d*d);
+for k=0:(e-1),
+  phis=phis+qip.open_systems.kraus2liou( kron(ey,qip.bra(k,e))*r );
+end
