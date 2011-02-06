@@ -40,5 +40,5 @@ The packages and functions are:
     * pure_state
     * mixed_state
     * real_mixed_state
-    * superoperator
+    * cptp_map
     * choi_matrix
