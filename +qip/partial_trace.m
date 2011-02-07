@@ -1,5 +1,4 @@
 function x = partial_trace(p,sys,dim);
-
 % PARTIAL_TRACE   Partial trace
 % requires: nothing
 % author: Toby Cubitt
