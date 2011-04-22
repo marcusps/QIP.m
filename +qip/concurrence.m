@@ -30,6 +30,15 @@ function c = concurrence( R )
 %  <http://www.gnu.org/licenses/>.
 import qip.*
 y = qip.pauli(2);
-Rt = kron(y,y)*conj(R)*kron(y,y);
-e = eig(R*Rt);
-c = max(0,real([-1 -1 -1 1]*e));
+% convert to magic basis
+% apply complex conjugate
+% revert to computational basis
+B = 1/sqrt(2) * [ 1  1i  0   0;
+                  0   0 1i  1i;
+                  0   0 1i -1i;
+                 -1 -1i  0   0];
+Rm = B'* conj( B * R * B' ) * B;
+Rt = kron(y,y)*Rm*kron(y,y);
+sR = sqrtm(R);
+Rm = sqrtm(sR*Rt*sR);
+c = max(0, 2 * max(real(eig(Rm))) - real(trace(Rm)));
