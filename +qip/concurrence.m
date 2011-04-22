@@ -32,4 +32,4 @@ import qip.*
 y = qip.pauli(2);
 Rt = kron(y,y)*conj(R)*kron(y,y);
 e = eig(R*Rt);
-c = max(0,[-1 -1 -1 1]*e);
+c = max(0,real([-1 -1 -1 1]*e));
