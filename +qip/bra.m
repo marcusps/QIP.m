@@ -28,4 +28,8 @@ function v = bra( s, d )
 % 
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
-v = qip.ket( s, d )';
+if ischar(m),
+  v = qip.ket( s )';
+else
+  v = qip.ket( s, d )';
+end
