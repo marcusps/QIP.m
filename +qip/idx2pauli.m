@@ -28,9 +28,9 @@ function p = idx2pauli( v )
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see
 %  <http://www.gnu.org/licenses/>.
-p = pauli(v(1)); 
+p = qip.pauli(v(1)); 
 if length(v) >= 2,
   for k=2:length(v),
-    p = kron( p, pauli(v(k)) );
+    p = kron( p, qip.pauli(v(k)) );
   end
 end
