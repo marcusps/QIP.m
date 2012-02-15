@@ -16,7 +16,6 @@ The packages and functions are:
   - projector
   - ctrlu
   - tensor
-  - partial_trace
   - asym_hermitian_matrix
   - open_systems
     * liou
