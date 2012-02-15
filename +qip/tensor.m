@@ -1,48 +1,33 @@
-function M = tensor(varargin)
-
+function T = tensor(varargin)
 % TENSOR  Tensor product
-% author: Toby Cubitt
+% author: Marcus P da SIlva
 % requires: none
 %
-%   m = TENSOR(a,b,c,...) returns the kronecker product of its arguments.
+%   m = TENSOR(a,b,c,...) returns the tensor product of a, b, c etc
 %
-%   Each argument should either be a matrix, or a cell array containing a
-%   matrix and an integer. In the latter case, the integer specifies the
-%   repeat count for the matrix, e.g. TENSOR(a,{b,3},c) =
-%   TENSOR(a,b,b,b,c).
-% 
 %   See also: kron
 %
-%   Copyright (C) 2010  Toby Cubitt   <toby@dr-qubit.org>
+%   Copyright (C) 2010   Marcus P da Silva http://github.com/marcusps
 % 
-%   License: Distributed under GPL 2.0
-%            http://creativecommons.org/licenses/GPL/2.0/
-%            http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+%   License: Distributed under Apache License, Version 2.0
+%            http://www.apache.org/licenses/LICENSE-2.0
 %
 
-%  Copyright (C) 2010   Toby Cubitt   <toby@dr-qubit.org>
+%    Copyright 2012 Marcus P. da Silva
 % 
-%  This program is free software; you can redistribute it and/or modify
-%  it under the terms of the GNU General Public License as published by
-%  the Free Software Foundation; either version 3 of the License, or
-%  (at your option) any later version.
+%    Licensed under the Apache License, Version 2.0 (the "License");
+%    you may not use this file except in compliance with the License.
+%    You may obtain a copy of the License at
 % 
-%  This program is distributed in the hope that it will be useful,
-%  but WITHOUT ANY WARRANTY; without even the implied warranty of
-%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%  GNU General Public License for more details.
+%        http://www.apache.org/licenses/LICENSE-2.0
 % 
-%  You should have received a copy of the GNU General Public License
-%  along with this program; if not, see <http://www.gnu.org/licenses/>.
+%    Unless required by applicable law or agreed to in writing, software
+%    distributed under the License is distributed on an "AS IS" BASIS,
+%    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%    See the License for the specific language governing permissions and
+%    limitations under the License.
 
-
-M = 1;
-for j = 1:nargin
-  if iscell(varargin{j})
-    for k = 1:varargin{j}{2}
-      M = kron(M,varargin{j}{1});
-    end
-  else
-    M = kron(M,varargin{j});
-  end
+T = 1;
+for ii=1:nargin,
+  T = kron(T,varargin{ii});
 end

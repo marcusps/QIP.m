@@ -4,7 +4,7 @@ QIP.M
 This is intended to be a library of useful functions in quantum
 information processing calculations.  The MATLAB package is separated
 into different sub-packages which contain related functions. All
-functions are released under the GPL license.
+functions are released under the Apache 2.0 license.
 
 The packages and functions are:
 
