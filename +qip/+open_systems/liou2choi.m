@@ -29,4 +29,4 @@ function M = liou2choi( c )
 %    See the License for the specific language governing permissions and
 %    limitations under the License.
 s = size(c);
-M = 1/s(1)*qip.open_systems.choi_liou_involution(c);
+M = 1/sqrt(s(1))*qip.open_systems.choi_liou_involution(c);
