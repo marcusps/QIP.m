@@ -31,6 +31,6 @@ function rho = real_mixed_state(d)
 %  You should have received a copy of the GNU General Public License
 %  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-u = qip.random.rand_ortho(d);
+u = qip.random.orthogonal_matrix(d);
 e = qip.random.dirichlet(ones(1,d));
 rho = u*diag(e)*u';
