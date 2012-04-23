@@ -41,10 +41,10 @@ n = log2(d)/2;
 
 a = zeros(size(l));
 for i=0:(d-1),
-  paulii = idx2pauli(str2num(dec2base(i,4,n)));
+  paulii = idx2pauli(arrayfun(@(s) str2num(s),dec2base(i,4,n)));
   lpi = l * vec(paulii);
   for j=0:(d-1),
-    paulij = idx2pauli(str2num(dec2base(j,4,n)))/sqrt(d);
+    paulij = idx2pauli(arrayfun(@(s) str2num(s),dec2base(j,4,n)))/sqrt(d);
     a(j+1,i+1) = vec(paulij)'*lpi; 
   end
 end
