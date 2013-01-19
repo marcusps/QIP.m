@@ -33,20 +33,9 @@ function M = choi_liou_involution( c )
 %    See the License for the specific language governing permissions and
 %    limitations under the License.
 s = size(c);
+d = s(1);
+sd = sqrt(d);
 M = c;
 
-index = @(a,b) (a-1)*sqrt(s(1))+b;
+M = reshape(permute(reshape(c,sd,sd,sd,sd),[1,3,2,4]),d,d);
 
-for n=1:sqrt(s(1)),
-  for m=1:sqrt(s(1)),
-    for o=1:sqrt(s(1)),
-      for p=n+1:sqrt(s(1)),
-        % this swaps M_{nm,op} with M_{pm,on}
-        temp = M( index(n,m), index(o,p) );
-        M( index(n,m), index(o,p) ) = ...
-            M( index(p,m), index(o,n) );
-        M( index(p,m), index(o,n) ) = temp;
-      end
-    end
-  end
-end
